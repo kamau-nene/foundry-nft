@@ -16,4 +16,13 @@ contract BasicNftTest is Test {
         basicNft = deployer.run();
 
     }
+
+    function testNameIsCorrect () public view  {
+        string memory expectedNmae= "Dogie";
+        string memory actualName= basicNft.name();
+
+        assert(keccak256(abi.encodedPacked(expectedNmae)) == keccak256(abi.encodedPaced(actualName)));
+
+
+    }
 }
